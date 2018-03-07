@@ -69,7 +69,7 @@ table{
   border-color: white;
   border-style: solid;
   margin: 20 auto;
-  width: 50%;
+  width: 40%;
 }
 td{
   color: #FFFFFF;
@@ -83,13 +83,14 @@ td{
 }
 th{
   color: #FFFFFF;
-  font-size: 15px;
+  font-size: 20px;
   text-align: justify;
   padding: 15px 7px 15px 15px;
   border: 1px;
   border-color: white;
   border-style: solid;
   width:50%;
+  text-align: center;
 }
 .box{
   width:95%;

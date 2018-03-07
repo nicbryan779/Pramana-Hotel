@@ -43,6 +43,11 @@
         alert("Phone Number must be filled");
         return false;
       }
+      else if (isNaN(phone))
+      {
+        alert("Phone Number must be numeric");
+        return false;
+      }
       else if (room=="")
       {
         alert("Room must be selected");
@@ -58,7 +63,7 @@
         alert("Length of stay must be more than 0");
         return false;
       }
-      else if (new Date(date).getTime() =< today.getTime())
+      else if (new Date(date).getTime() <= today.getTime())
       {
         alert("Date must be later than today");
         return false;
