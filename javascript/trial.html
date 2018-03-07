@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript exercise</title>
+    <script type="text/javascript">
+      function doSomething()
+      {
+        alert("Hello, world!");
+
+        for (let i=0;i<51;i++)
+        {
+          if((i%3===0)&&(i%5===0)&&(i!=0))
+          {
+            console.log("BUZZ!!!");
+          }
+          else if ((i%3===0) || (i%5===0))
+          {
+            console.log(i);
+          }
+        }
+      }
+      window.onload=doSomething;
+    </script>
+  </head>
+  <body>
+    <div>
+
+    </div>
+  </body>
+</html>
