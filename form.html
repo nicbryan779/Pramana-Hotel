@@ -14,7 +14,7 @@
     {
       document.getElementById("content").innerHTML="<form action='form.html' onsubmit='return validateForm()' method='post'><table><tr><th colspan='2'>BOOK ROOM</th></tr><tr><td>Name</td><td><input type='text' name ='name' class='box'></td></tr><tr><td>Email</td><td><input type='email' name ='email' class='box'></td></tr><tr><td>Phone</td><td><input type='text' name ='phone' class='box'></td></tr><tr><td>Stay in Date</td><td><input type='date' name ='date' class='box'></td></tr><tr><td>Length of Stay</td><td><input type='number' name ='name' class='box'></td></tr><tr><td>Room Type</td><td><select name='room' class='select'><option value=''>--Select One--</option><option value='Deluxe Room'>Deluxe Room - $274</option><option value='Deluxe Villa'>Deluxe Pool Villa - $438</option><option value='1'>1 Bedroom Pool Villa - $525</option><option value='2'>2 Bedroom Pool Villa - $635</option></select></td></tr><tr><td>Additional Charge</td><td><input type='checkbox' name ='extrabed' value='bed'>Extra Bed - $80<br><input type='checkbox' name ='shuttle' value='shuttle'>Airport Shuttle - $40<br><input type='checkbox' name ='tour' value='tour'>Ubud Tour 1D - $100</td></tr><tr><th colspan='2'><input type='submit' value='SUBMIT' class='btn'></tr></table></form>";
     }
-
+    let today = new Date();
     function validateForm()
     {
       let name = document.forms["book"]["name"].value;
@@ -23,10 +23,44 @@
       let date = document.forms["book"]["date"].value;
       let days = document.forms["book"]["days"].value;
       let room = document.forms["book"]["room"].value;
+      let bed = document.forms["book"]["bed"].value;
+      let shuttle = document.forms["book"]["shuttle"].value;
+      let tour = document.forms["book"]["tour"].value;
+      console.log(today);
       console.log(name);
       if(name=="")
       {
         alert("Name must be filled");
+        return false;
+      }
+      else if (email=="")
+      {
+        alert("Email must be filled");
+        return false;
+      }
+      else if (phone=="")
+      {
+        alert("Phone Number must be filled");
+        return false;
+      }
+      else if (room=="")
+      {
+        alert("Room must be selected");
+        return false;
+      }
+      else if (days=="")
+      {
+        alert("Length of stay must be filled");
+        return false;
+      }
+      else if (days===0)
+      {
+        alert("Length of stay must be more than 0");
+        return false;
+      }
+      else if (new Date(date).getTime() =< today.getTime())
+      {
+        alert("Date must be later than today");
         return false;
       }
       else {
@@ -53,7 +87,7 @@
       <hr>
     </div>
     <div id="content">
-      <form name ="book" action='form.html' onsubmit='return validateForm()' method='post'>
+      <form name ="book" onsubmit='return validateForm()' method='post'>
         <table>
           <tr>
             <th colspan='2'>BOOK ROOM</th>
@@ -92,7 +126,7 @@
           <tr>
             <td>Additional Charge</td>
             <td>
-              <input type='checkbox' name ='extrabed' value='bed'>Extra Bed - $80<br>
+              <input type='checkbox' name ='bed' value='bed'>Extra Bed - $80<br>
               <input type='checkbox' name ='shuttle' value='shuttle'>Airport Shuttle - $40<br>
               <input type='checkbox' name ='tour' value='tour'>Ubud Tour 1D - $100</td>
             </tr>
