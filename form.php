@@ -74,9 +74,12 @@
           <tr>
             <td>Additional Charge</td>
             <td>
-              <input type='checkbox' name ='bed' value='1'>Extra Bed - $80<br>
-              <input type='checkbox' name ='shuttle' value='1'>Airport Shuttle - $40<br>
-              <input type='checkbox' name ='tour' value='1'>Ubud Tour 1D - $100</td>
+              <input id="bed" type='checkbox' name ='bed' value='1'>Extra Bed - $80<br>
+              <input id="bed hidden"type='hidden' name = "bed" value="0">
+              <input id="shuttle" type='checkbox' name ='shuttle' value='1'>Airport Shuttle - $40<br>
+              <input id="shuttle hidden"type='hidden' name = "shuttle" value="0">
+              <input id="tour" type='checkbox' name ='tour' value='1'>Ubud Tour 1D - $100</td>
+              <input id="tour hiiden" type='hidden' name = "tour" value="0">
             </tr>
             <tr>
               <th colspan='2'><input type='submit' value='SUBMIT' class='btn'>
@@ -101,6 +104,15 @@
       let tour = document.forms["book"]["tour"].value;
       console.log(today.getTime());
       console.log(name);
+      if(document.getElementById("bed").checked) {
+          document.getElementById('bed hidden').disabled = true;
+      }
+      if(document.getElementById("shuttle").checked) {
+          document.getElementById('shuttle hidden').disabled = true;
+      }
+      if(document.getElementById("tour").checked) {
+          document.getElementById('tour hidden').disabled = true;
+      }
       if(name=="")
       {
         alert("Name must be filled");
