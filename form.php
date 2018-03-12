@@ -79,7 +79,7 @@
               <input id="shuttle" type='checkbox' name ='shuttle' value='1'>Airport Shuttle - $40<br>
               <input id="shuttle hidden"type='hidden' name = "shuttle" value="0">
               <input id="tour" type='checkbox' name ='tour' value='1'>Ubud Tour 1D - $100</td>
-              <input id="tour hiiden" type='hidden' name = "tour" value="0">
+              <input id="tour hidden" type='hidden' name = "tour" value="0">
             </tr>
             <tr>
               <th colspan='2'><input type='submit' value='SUBMIT' class='btn'>
